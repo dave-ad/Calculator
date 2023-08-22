@@ -9,19 +9,19 @@
         Title="Calculator" Height="540" Width="333"
         Icon="/Assets/Calculator-512.png"
         Background="#FF1D1D1D">
-    <!--Icon="/Assets/Calculator-512.png"-->
 
-    <Grid >
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="3"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width=""/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -29,19 +29,39 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="3"/>
         </Grid.RowDefinitions>
+
+        <Label x:Name="calcType" 
+               Content="Standard"
+               Grid.Row="1"
+               Grid.Column="1" 
+               FontSize="23"
+               Foreground="White" 
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="10,0,0,0" 
+               Width="151" 
+               Height="50" 
+               Grid.ColumnSpan="2" />
 
         <Label x:Name="lblResult" 
                Content="0"
-               HorizontalAlignment="Right"
-               VerticalAlignment="Bottom"
-               FontSize="60"
+               Grid.Row="2"
+               Grid.Column="1" 
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Bottom"
+               Foreground="White"
+               FontSize="45"  
+               Width="303"
+               Height="155"
                Grid.ColumnSpan="4"/>
 
         <Button x:Name="percentageBtn" 
                 Content="%"
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="1" 
                 Foreground="White"
                 FontSize="16" 
@@ -51,7 +71,7 @@
 
         <Button x:Name="ceBtn" 
                 Content="CE"
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="2"                
                 Foreground="White"
                 FontSize="14"
@@ -61,7 +81,7 @@
 
         <Button x:Name="cBtn" 
                 Content="C"
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="3"                
                 Foreground="White"
                 FontSize="14"
@@ -71,7 +91,7 @@
 
         <Button x:Name="backSpaceBtn" 
                 Content="⇐"
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="4"                
                 Foreground="White"
                 FontSize="18"
@@ -81,7 +101,7 @@
 
         <Button x:Name="fractionBtn" 
                 Content="⅟"
-                Grid.Row="3"
+                Grid.Row="4"
                 Grid.Column="1"                
                 Foreground="White"
                 FontSize="16"
@@ -91,27 +111,27 @@
 
         <Button x:Name="powerbtn" 
                 Content="x²"
-                Grid.Row="3"
+                Grid.Row="4"
                 Grid.Column="2"                
                 Foreground="White"
-                FontSize="16"
+                FontSize="14"
                 Margin="0.5"
                 Background="#FF2F2F2F"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="rootbtn" 
                 Content="²√x"
-                Grid.Row="3"
+                Grid.Row="4"
                 Grid.Column="3"                
                 Foreground="White"
-                FontSize="16"
+                FontSize="14"
                 Margin="0.5"
                 Background="#FF2F2F2F"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="dividebtn" 
                 Content="÷"
-                Grid.Row="3"
+                Grid.Row="4"
                 Grid.Column="4"                
                 Foreground="White"
                 FontSize="23"
@@ -121,37 +141,40 @@
 
         <Button x:Name="sevenBtn" 
                 Content="7"
-                Grid.Row="4"
+                Grid.Row="5"
                 Grid.Column="1"                
                 Foreground="White"
                 FontSize="17"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="eightBtn" 
                 Content="8"
-                Grid.Row="4"
+                Grid.Row="5"
                 Grid.Column="2"                
                 Foreground="White"
                 FontSize="17"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="nineBtn" 
                 Content="9"
-                Grid.Row="4"
+                Grid.Row="5"
                 Grid.Column="3"                
                 Foreground="White"
                 FontSize="17"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="multiplyBtn" 
                 Content="⨉"
-                Grid.Row="4"
+                Grid.Row="5"
                 Grid.Column="4"                
                 Foreground="White"
                 FontSize="15"
@@ -161,37 +184,40 @@
 
         <Button x:Name="fourBtn" 
                 Content="4"
-                Grid.Row="5"
+                Grid.Row="6"
                 Grid.Column="1"                
                 Foreground="White"
                 FontSize="17"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="fiveBtn" 
                 Content="5"
-                Grid.Row="5"
+                Grid.Row="6"
                 Grid.Column="2"                
                 Foreground="White"
                 FontSize="17"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="sixBtn" 
                 Content="6"
-                Grid.Row="5"
+                Grid.Row="6"
                 Grid.Column="3"                
                 Foreground="White"
                 FontSize="17"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="minusBtn" 
                 Content="—"
-                Grid.Row="5"
+                Grid.Row="6"
                 Grid.Column="4"                
                 Foreground="White"
                 FontSize="15"
@@ -201,37 +227,40 @@
 
         <Button x:Name="oneBtn" 
                 Content="1"
-                Grid.Row="6"
+                Grid.Row="7"
                 Grid.Column="1"                
                 Foreground="White"
                 FontSize="17"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="twoBtn" 
                 Content="2"
-                Grid.Row="6"
+                Grid.Row="7"
                 Grid.Column="2"                
                 Foreground="White"
                 FontSize="17"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="threeBtn" 
                 Content="3"
-                Grid.Row="6"
+                Grid.Row="7"
                 Grid.Column="3"                
                 Foreground="White"
                 FontSize="17"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="plusBtn" 
                 Content="+"
-                Grid.Row="6"
+                Grid.Row="7"
                 Grid.Column="4"                
                 Foreground="White"
                 FontSize="21"
@@ -241,7 +270,7 @@
 
         <Button x:Name="negativeBtn" 
                 Content="⨦"
-                Grid.Row="7"
+                Grid.Row="8"
                 Grid.Column="1"                
                 Foreground="White"
                 FontSize="20"
@@ -251,17 +280,18 @@
 
         <Button x:Name="zeroBtn" 
                 Content="0"
-                Grid.Row="7"
+                Grid.Row="8"
                 Grid.Column="2"                
                 Foreground="White"
                 FontSize="20"
                 Margin="0.5"
                 Background="#FF363636"
+                Click="btnNumber_Click"
                 Style="{StaticResource ButtonRound}"/>
 
         <Button x:Name="decimalBtn" 
                 Content="."
-                Grid.Row="7"
+                Grid.Row="8"
                 Grid.Column="3"                
                 Foreground="White"
                 FontSize="20"
@@ -271,7 +301,7 @@
 
         <Button x:Name="equalsBtn" 
                 Content="="
-                Grid.Row="7"
+                Grid.Row="8"
                 Grid.Column="4"                
                 Foreground="Black"
                 FontSize="25"
@@ -279,5 +309,15 @@
                 Background="#FFE89D9D"
                 Style="{StaticResource ButtonRound}"/>
 
+        <!--<Button 
+            x:Name="equalsBtn"
+            Content="Blue" 
+            Grid.Row="7"
+            Grid.Column="4"                
+            Foreground="Black"
+            FontSize="25"
+            Margin="0.5"
+            Background="#FFE89D9D"
+            Style="{StaticResource btnBlue}"/>-->
     </Grid>
 </Window>
