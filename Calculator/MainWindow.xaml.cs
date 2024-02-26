@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Calculator
 {
@@ -67,7 +55,14 @@ namespace Calculator
         {
             if (currentOperation != null)
             {
-                double number = double.Parse(lblResult.Content.ToString());
+                double number;
+                if (!double.TryParse(lblResult.Content.ToString(), out number))
+                {
+                    MessageBox.Show("Invalid input", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ClearControls();
+                    return;
+                }
+
                 switch (currentOperation)
                 {
                     case '+':
@@ -80,18 +75,18 @@ namespace Calculator
                         result = currentNumber * number;
                         break;
                     case '/':
+                        if (number == 0)
+                        {
+                            MessageBox.Show("Division by zero is not allowed", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            ClearControls();
+                            return;
+                        }
                         result = currentNumber / number;
                         break;
                 }
                 lblResult.Content = result.ToString();
                 currentNumber = result;
             }
-        }
-
-        private void btnEquals_Click(object sender, RoutedEventArgs e)
-        {
-            PerformOperation();
-            currentOperation = null;
         }
 
         private void ClearControls()
